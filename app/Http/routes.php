@@ -12,3 +12,7 @@
 */
 
 Route::get('/','GraphController@main');
+
+//Get Data from Nep4J
+Route::get('/getGraphList','GraphController@getGraphList');
+Route::get('/getGraphData','GraphController@getGraphData');
