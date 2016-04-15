@@ -103,11 +103,6 @@ function addNode(n) {
     }
 }
 
-
-// function removeNode(n) {
-//     s.graph.dropNode(n.id);
-// }
-
 function clearGraph() {
     if(computeGraphOne){
         s1.graph.clear();

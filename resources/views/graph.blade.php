@@ -18,7 +18,9 @@
     	</div>
     	<div class="row">
 		    <div class="select-button-wrapper text-left col-sm-3">
+		    	Database Name : <input type="text" id="database_name">
 		    	<input type="file" id="files" name="files[]" multiple />
+		    	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorials</button>
 		    </div>
 		    <div class="col-sm-3">
 		    	Graph List
@@ -32,6 +34,25 @@
 				</table>
 			</div>
 		</div>
+
+		<!-- Modal content-->
+		<div class="modal fade" id="myModal" role="dialog">
+    		<div class="modal-dialog">
+			    <div class="modal-content">
+			        <div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+			            <h4 class="modal-title">Modal Header</h4>
+			        </div>
+			        <div class="modal-body">
+			            <p>Some text in the modal.</p>
+			        </div>
+			        <div class="modal-footer">
+			            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        </div>
+			    </div>
+			</div>
+    	</div>
+
 	    <!--Bottom Script -->
 		{!! Html::script('js/jquery-1.12.0.min.js'); !!}
 		{!! Html::script('js/bootstrap.min.js'); !!}

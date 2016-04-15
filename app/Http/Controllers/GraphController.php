@@ -72,5 +72,46 @@ class GraphController extends Controller{
 	    }
 	    return  response()->json(['nodes' => $node_list, 'edges' => $edge_list]);
 	}
+
+	public function importGraphData() {
+		$client = ClientBuilder::create()
+	    ->addConnection('default', 'http', 'localhost', 7474, true, 'neo4j', 'webapp')
+	    ->setAutoFormatResponse(true)
+	    ->build();
+
+	    $graph_data  = Input::get('graph_data');
+	    $label = Input::get('database_name');
+	    foreach($graph_data as $source => $target) {
+	    	$q = 'MERGE (p:'.$label.' { number:"'.$source.'"}) MERGE (q:'.$label.' { number:"'.$target.'"}) CREATE (p)-[r:Link]->(q)';
+	    	$results = $client->sendCypherQuery($q);
+	    }
+	    return "Import Data success";
+	}
+
+	public function createDatabase() {
+		$client = ClientBuilder::create()
+	    ->addConnection('default', 'http', 'localhost', 7474, true, 'neo4j', 'webapp')
+	    ->setAutoFormatResponse(true)
+	    ->build();
+
+	    $label  = Input::get('database_name');
+	    $q = 'Merge (n:Database{name:"'.$label.'"})';
+	    $results = $client->sendCypherQuery($q);
+	    return "Create Database success";
+	}
+
+	public function deleteDatabase() {
+		$client = ClientBuilder::create()
+	    ->addConnection('default', 'http', 'localhost', 7474, true, 'neo4j', 'webapp')
+	    ->setAutoFormatResponse(true)
+	    ->build();
+
+	    $label  = Input::get('database_name');
+	    $q = 'MATCH (n:Database{name:"'.$label.'"}) DETACH DELETE n';
+	    $results = $client->sendCypherQuery($q);
+	    $r = 'MATCH (n:'.$label.') DETACH DELETE n';
+	    $results = $client->sendCypherQuery($r);
+	    return "Delete Database success";
+	}
 }
 ?>

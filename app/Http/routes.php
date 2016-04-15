@@ -16,3 +16,8 @@ Route::get('/','GraphController@main');
 //Get Data from Nep4J
 Route::get('/getGraphList','GraphController@getGraphList');
 Route::get('/getGraphData','GraphController@getGraphData');
+
+//Import Data to Neo4J
+Route::get('/createDatabase','GraphController@createDatabase');
+Route::get('/deleteDatabase','GraphController@deleteDatabase');
+Route::get('/importGraphData','GraphController@importGraphData');
