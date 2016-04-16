@@ -8,6 +8,13 @@
         <title>Graph App</title>
     </head>
     <body>
+    	<div class="jumbotron">
+    		<img src="pic/neo4j_logo.png" class="img-rounded pull-right">
+    		<h1>Header+logo? not styled properly yet</h1>
+    		<h3>some description not style properly yet</h3>
+    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">About</button>
+    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorial</button>
+    	</div>
     	<div class="col-sm-12">
     		<div class="col-sm-6">
 	    		<div id="container1"></div>
@@ -17,14 +24,13 @@
 	    	</div>
     	</div>
     	<div class="row">
-		    <div class="select-button-wrapper text-left col-sm-3">
-		    	Database Name : <input type="text" id="database_name">
+		    <div class="select-button-wrapper text-left col-sm-3"><h3>form not constructed+styled properly yet</h3>
+		    	Database Name : <input class="form-control" placeholder="Please Enter Your Database's Name" type="text" id="database_name">
 		    	<input type="file" id="files" name="files[]" multiple />
-		    	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorials</button>
 		    </div>
 		    <div class="col-sm-3">
 		    	Graph List
-			    <table border="1" id="table" style="width:100%;">
+			    <table class="table table-hover" border="1" id="table" style="width:100%;">
 					<thead>
 						<th>Graph Name</th>
 						<th>Visualize</th>
@@ -52,7 +58,22 @@
 			    </div>
 			</div>
     	</div>
-
+    	<div class="modal fade" id="myModal2" role="dialog">
+    		<div class="modal-dialog">
+			    <div class="modal-content">
+			        <div class="modal-header">
+			        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+			            <h4 class="modal-title">Modal Header2</h4>
+			        </div>
+			        <div class="modal-body">
+			            <p>some text (ABOUT).</p>
+			        </div>
+			        <div class="modal-footer">
+			            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			        </div>
+			    </div>
+			</div>
+    	</div>
 	    <!--Bottom Script -->
 		{!! Html::script('js/jquery-1.12.0.min.js'); !!}
 		{!! Html::script('js/bootstrap.min.js'); !!}
