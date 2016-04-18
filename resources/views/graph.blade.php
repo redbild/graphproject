@@ -8,38 +8,49 @@
         <title>Graph App</title>
     </head>
     <body>
-    	<div class="jumbotron">
-    		<img src="pic/neo4j_logo.png" class="img-rounded pull-right">
-    		<h1>Header+logo? not styled properly yet</h1>
-    		<h3>some description not style properly yet</h3>
-    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">About</button>
-    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorial</button>
-    	</div>
-    	<div class="col-sm-12">
-    		<div class="col-sm-6">
-	    		<div id="container1"></div>
-	    	</div>
-	    	<div class="col-sm-6">
-	    		<div class="col-sm-6" id="container2"></div>
-	    	</div>
-    	</div>
     	<div class="row">
-		    <div class="select-button-wrapper text-left col-sm-3"><h3>form not constructed+styled properly yet</h3>
-		    	Database Name : <input class="form-control" placeholder="Please Enter Your Database's Name" type="text" id="database_name">
-		    	<input type="file" id="files" name="files[]" multiple />
-		    </div>
-		    <div class="col-sm-3">
-		    	Graph List
-			    <table class="table table-hover" border="1" id="table" style="width:100%;">
-					<thead>
-						<th>Graph Name</th>
-						<th>Visualize</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-				</table>
+	    	<div class="col-sm-6">
+	    		<!-- header content -->
+		    	<div class="col-sm-12">
+		    		<img src="pic/neo4j_logo.png" class="img-rounded pull-right">
+		    		<h1>Graph Visualize</h1>
+		    		<h3>Data Relatiohship Visualized by Neo4j</h3>
+		    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">About</button>
+		    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorial</button>
+		    	</div>
+		    	<!-- upload tool -->
+			    <div class="select-button-wrapper text-left col-sm-12"><h3>Upload your data and see what happens!</h3>
+			    	Graph Name : <input class="form-control" placeholder="Please Enter Your Graph's Name" type="text" id="database_name">
+			    	<input type="file" id="files" name="files[]" multiple />
+			    </div>
+
+			    <!-- database tool -->
+			    <div class="col-sm-12">
+			    	Graph List	
+				    <table class="table table-hover" border="1" id="table" style="width:100%;">
+						<thead>
+							<th>Graph Name</th>
+							<th>Visualize</th>
+	                    </thead>
+	                    <tbody>
+	                    </tbody>
+					</table>
+				</div>
 			</div>
+			<div class="col-sm-6">
+	    		<!-- Graph Content -->
+		    	<div class="col-sm-12">
+			    	<div id="container1"></div>
+			    	<div id="container2"></div>
+		    	</div>
+		    	<div class="col-sm-12">
+		    		<button type="button" class="btn btn-info btn-lg" id="pop1">Graph 1</button>
+		    		<button type="button" class="btn btn-info btn-lg" id="pop2">Graph 2</button>
+		    	</div>
+	    	</div>
 		</div>
+    	
+
 
 		<!-- Modal content-->
 		<div class="modal fade" id="myModal" role="dialog">

@@ -19,7 +19,7 @@
                 console.log(e);
                 for(var row in e['graph_name']) {
                     html += '<tr>\r\n<td>' + e['graph_name'][row] + '</td>\r\n';
-                    html += '<td><button id="graph1_'+ e['graph_name'][row] +'" type="button">Graph 1</button><button id="graph2_'+ e['graph_name'][row] +'" type="button">Graph 2</button><button id="delete_'+ e['graph_name'][row] +'" type="button">Delete</button></td>\r\n</tr>\r\n';
+                    html += '<td><button class="btn btn-default" id="graph1_'+ e['graph_name'][row] +'" type="button">Graph 1</button><button class="btn btn-default" id="graph2_'+ e['graph_name'][row] +'" type="button">Graph 2</button><button class="btn btn-danger" id="delete_'+ e['graph_name'][row] +'" type="button">Delete</button></td>\r\n</tr>\r\n';
                 }
                 $('#table tbody').html(html);
 
@@ -44,22 +44,28 @@
     }
 
     function createDatabase() {
-        var label = $('#database_name').val();
-        ajaxSetup();
-        $.ajax({
-            type: "GET",
-            url: "http://localhost/graphproject/public/createDatabase",
-            data : {database_name: label},
-            success: function(e){
-                console.log(e);
-            },
-            error: function(rs, e){
-                console.log(rs.responseText);
-                alert('Problem occurs during fetch data.');
-            },
-            async: false,
-        })
-        setGraphTable();
+        var graphname = $('#database_name').val();
+        if (graphname == ""){
+            alert("Please enter your graph name");
+        }else {
+            var label = $('#database_name').val();
+            ajaxSetup();
+            $.ajax({
+                type: "GET",
+                url: "http://localhost/graphproject/public/createDatabase",
+                data : {database_name: label},
+                success: function(e){
+                    console.log(e);
+                },
+                error: function(rs, e){
+                    console.log(rs.responseText);
+                    alert('Problem occurs during fetch data.');
+                },
+                async: false,
+            })
+            setGraphTable();
+
+        }
     }
 
     function deleteDatabase(databaseName) {
@@ -115,6 +121,7 @@
             })
         }
         reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
+        $('#database_name').val(""); //set input field to "" after upload data completed
     }
 
     function isAPIAvailable() {
@@ -146,6 +153,14 @@
             if(isAPIAvailable()) {
                 $('#files').bind('change', handleFileSelect);
             }
+            $('#pop1').click(function(){
+                $('#container1').parent().append($('#container1'));
+            });
+            $('#pop2').click(function(){
+                $('#container2').parent().append($('#container2'));
+                /*$('#container2').css('z-index',2);
+                $('#container1').css('z-index',1);*/
+            });
         });
     }();
 }();
