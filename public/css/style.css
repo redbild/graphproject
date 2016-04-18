@@ -4,6 +4,8 @@
     margin: auto;
     border-style: solid;
     border-width: 5px;
+    border-height: 5px;
+    position: absolute;
 }
 #container2 {
     width: 100%;
@@ -11,4 +13,24 @@
     margin: auto;
     border-style: solid;
     border-width: 5px;
+    border-height: 5px;
+    position: absolute;
+}
+.zoom-section1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+.zoom-section1 button {
+    margin-right: 5px;
+}
+.zoom-section2 {
+    position: absolute;
+    bottom: 0;
+    left: 470px;
+    z-index: 100;
+}
+.zoom-section2 button {
+    margin-right: 5px;
 }

@@ -17,30 +17,53 @@
     	</div>
     	<div class="col-sm-12">
     		<div class="col-sm-6">
-	    		<div id="container1"></div>
+	    		<div id="container1">
+	    			<div class="zoom-section1">
+                        <button class="btn btn-success" id="zoomin1">
+                            <span class="glyphicon glyphicon-zoom-in">
+                        </button>
+                        <button class="btn btn-danger" id="zoomout1">
+                            <span class="glyphicon glyphicon-zoom-out">
+                        </button>
+                        <button class="btn btn-primary" id="nozoom1">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                        </button>
+                    </div>
+	    		</div>
+	    		<div id="container2">
+	    			<div class="zoom-section2">
+                        <button class="btn btn-success" id="zoomin2">
+                            <span class="glyphicon glyphicon-zoom-in">
+                        </button>
+                        <button class="btn btn-danger" id="zoomout2">
+                            <span class="glyphicon glyphicon-zoom-out">
+                        </button>
+                        <button class="btn btn-primary" id="nozoom2">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                        </button>
+                    </div>
+	    		</div>
 	    	</div>
 	    	<div class="col-sm-6">
-	    		<div class="col-sm-6" id="container2"></div>
-	    	</div>
-    	</div>
-    	<div class="row">
-		    <div class="select-button-wrapper text-left col-sm-3"><h3>form not constructed+styled properly yet</h3>
-		    	Database Name : <input class="form-control" placeholder="Please Enter Your Database's Name" type="text" id="database_name">
-		    	<input type="file" id="files" name="files[]" multiple />
-		    </div>
-		    <div class="col-sm-3">
-		    	Graph List
-			    <table class="table table-hover" border="1" id="table" style="width:100%;">
-					<thead>
-						<th>Graph Name</th>
-						<th>Visualize</th>
-                    </thead>
-                    <tbody>
-                    </tbody>
-				</table>
+		    	<div class="row">
+				    <div class="select-button-wrapper text-left col-sm-6"><h3>form not constructed+styled properly yet</h3>
+				    	Database Name : <input class="form-control" placeholder="Please Enter Your Database's Name" type="text" id="database_name">
+				    	<input type="file" id="files" name="files[]" multiple />
+				    </div>
+				    <div class="col-sm-6">
+				    	Graph List
+					    <table class="table table-hover" border="1" id="table" style="width:100%;">
+							<thead>
+								<th>Graph Name</th>
+								<th>Visualize</th>
+		                    </thead>
+		                    <tbody>
+		                    </tbody>
+						</table>
+					</div>
+				</div>
 			</div>
-		</div>
-
+    	</div>
 		<!-- Modal content-->
 		<div class="modal fade" id="myModal" role="dialog">
     		<div class="modal-dialog">
