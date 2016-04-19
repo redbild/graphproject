@@ -19,7 +19,7 @@
                 console.log(e);
                 for(var row in e['graph_name']) {
                     html += '<tr>\r\n<td>' + e['graph_name'][row] + '</td>\r\n';
-                    html += '<td><button class="btn btn-default" id="graph1_'+ e['graph_name'][row] +'" type="button">Graph 1</button><button class="btn btn-default" id="graph2_'+ e['graph_name'][row] +'" type="button">Graph 2</button><button class="btn btn-danger" id="delete_'+ e['graph_name'][row] +'" type="button">Delete</button></td>\r\n</tr>\r\n';
+                    html += '<td><button class="btn btn-default" id="graph1_'+ e['graph_name'][row] +'" type="button">Graph 1</button>&nbsp;&nbsp;<button class="btn btn-default" id="graph2_'+ e['graph_name'][row] +'" type="button">Graph 2</button>&nbsp;&nbsp;<button class="btn btn-danger" id="delete_'+ e['graph_name'][row] +'" type="button">Delete</button></td>\r\n</tr>\r\n';
                 }
                 $('#table tbody').html(html);
 

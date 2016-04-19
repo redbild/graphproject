@@ -21,6 +21,8 @@ function initSigma() {
         maxEdgeSize : 0.1,
         minNodeSize : 0.5,
         maxNodeSize : 5,
+        mouseWheelEnabled: false,
+        scalingMode: "inside",
     });
 
     s2 = new sigma({ renderers: [{
@@ -34,6 +36,8 @@ function initSigma() {
         maxEdgeSize : 0.1,
         minNodeSize : 0.5,
         maxNodeSize : 5,
+        mouseWheelEnabled: false,
+        scalingMode: "inside",
     });
 }
 
@@ -49,7 +53,7 @@ function addNode(n) {
             x: n.x,
             y: n.y,
             size: 0.5,
-            color: '#a5adb0',
+            color: '#ff0000',
         })
     } else {
         if(s2.graph.nodes(n.id) !== undefined) {
@@ -62,7 +66,7 @@ function addNode(n) {
             x: n.x,
             y: n.y,
             size: 0.5,
-            color: '#a5adb0',
+            color: '#0000ff',
         })
     }
 }
@@ -80,7 +84,7 @@ function addNode(n) {
             id: e.id,
             source: e.source,
             target: e.target,
-            color: '#a5adb0',
+            color: '#ff0000',
             type: "curvedArrow",
             size: 0.005
         })
@@ -96,7 +100,7 @@ function addNode(n) {
             id: e.id,
             source: e.source,
             target: e.target,
-            color: '#a5adb0',
+            color: '#0000ff',
             type: "curvedArrow",
             size: 0.005
         })
@@ -109,6 +113,34 @@ function clearGraph() {
     } else {
         s2.graph.clear();
     }
+}
+
+function addZoomListener() {
+    // Zoom in Button
+    document.getElementById("zoomin1").addEventListener("click", function(){
+        s1.camera.goTo({x:s1.camera.x, y:s1.camera.y, ratio: 0.75 * s1.camera.ratio});
+    });
+
+    document.getElementById("zoomin2").addEventListener("click", function(){
+        s2.camera.goTo({x:s2.camera.x, y:s2.camera.y, ratio: 0.75 * s2.camera.ratio});
+    });
+
+    // Zoom out Button
+    document.getElementById("zoomout1").addEventListener("click", function(){
+        s1.camera.goTo({x:s1.camera.x, y:s1.camera.y, ratio: 1.25 * s1.camera.ratio});
+    });
+
+    document.getElementById("zoomout2").addEventListener("click", function(){
+        s2.camera.goTo({x:s2.camera.x, y:s2.camera.y, ratio: 1.25 * s2.camera.ratio});
+    });
+
+    // Refresh Zoom Button
+    document.getElementById("nozoom1").addEventListener("click", function(){
+        s1.camera.goTo({x:0, y:0, ratio: 1});
+    });
+    document.getElementById("nozoom2").addEventListener("click", function(){
+        s2.camera.goTo({x:0, y:0, ratio: 1});
+    });
 }
 
 function plotFullGraph(){
@@ -159,6 +191,7 @@ function fetchData(graphName) {
             console.log(e);
             graphData = e;
             plotFullGraph();
+            addZoomListener();
         },
         error: function(rs, e){
             console.log(rs.responseText);
