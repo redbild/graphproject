@@ -1,24 +1,28 @@
+#controller {
+    background-color: #32323A;
+    color: white;
+    height: 100vh;
+}
+
 #container1 {
-    width: 97%;
+    width: 95%;
     height: 95vh;
+    top: 25px;
     margin: auto;
-    /*border-style: solid;
-    border-width: 3px;*/
     position: absolute;
-    background-color: black;
+
 }
 #container2 {
-    width: 97%;
+    width: 95%;
     height: 95vh;
+    top: 25px;
     margin: auto;
-/*  border-style: solid;
-    border-width: 3px;*/
     position: absolute;
-    /*background-color: black;*/
+
 }
 
 .jumbotron{
-    /*background-color: rgba(0,29,30,0.9);*/
+
 }
 .img-rounded{
     width: 150px;

@@ -9,15 +9,16 @@
     </head>
     <body>
     	<div class="row">
-	    	<div class="col-sm-6">
+	    	<div class="col-sm-4" id="controller">
 	    		<!-- header content -->
-		    	<div class="col-sm-12">
+		    	<div class="col-sm-12" style="top:20px;">
 		    		<img src="pic/neo4j_logo.png" class="img-rounded pull-right">
 		    		<h1>Graph Visualize</h1>
 		    		<h3>Data Relatiohship Visualized by Neo4j</h3>
 		    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2">About</button>
 		    		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Tutorial</button>
 		    	</div>
+
 		    	<!-- upload tool -->
 			    <div class="select-button-wrapper text-left col-sm-12"><h3>Upload your data and see what happens!</h3>
 			    	Graph Name : <input class="form-control" placeholder="Please Enter Your Graph's Name" type="text" id="database_name">
@@ -37,7 +38,8 @@
 					</table>
 				</div>
 			</div>
-			<div class="col-sm-6">
+
+			<div class="col-sm-8">
 	    		<!-- Graph Content -->
 		    	<div class="col-sm-12">
 			    	<div id="container1"></div>
