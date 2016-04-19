@@ -25,7 +25,7 @@
 			    	<h4>Upload your data and see what happens!</h4>
 			    	Graph Name : <input class="form-control" placeholder="Enter Your Graph's Name. (No more than 12 characters)" type="text" id="database_name">
 			    	<input type="file" id="files" name="files[]" multiple style="margin-top:5px;"/>
-			    	<button type="button" class="btn btn-primary" id="uploadbutton" style="margin-top:5px;">Upload</button>
+			    	<!-- <button type="button" class="btn btn-primary" id="uploadbutton" style="margin-top:5px;">Upload</button> -->
 			    	<hr style="margin-top:10px;">
 			    </div>
 

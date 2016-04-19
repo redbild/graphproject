@@ -116,8 +116,6 @@
         }
         reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
         $('#database_name').val(""); //set input field to "" after upload data completed
-        $('#files').val("");
-
     }
 
     function isAPIAvailable() {
@@ -147,26 +145,25 @@
         setGraphTable();
         $(document).ready(function() {
             if(isAPIAvailable()) {
-                /*$('#files').bind('change', handleFileSelect);*/
-                $('#uploadbutton').click(function(){
-                    // check condition
-                    var filledname = $('#database_name').val();
+                $('#files').bind('change', handleFileSelect);
+                // $('#uploadbutton').click(function(){
+                //     // check condition
+                //     var filledname = $('#database_name').val();
 
-                    var chosefile = $('#files').val();
-                    if (filledname == ""){
-                        alert("Please enter your graph name.");
-                    } else if(filledname.length > 12) {
-                        alert("Graph name must be no more than 12 characters.")
-                    } else if(chosefile = ""){
-                        alert("Please choose your file.");
-                    } else {
-                        handleFileSelect();
-                    }
-                });
-                
+                //     var chosefile = $('#files').val();
+                //     if (filledname == ""){
+                //         alert("Please enter your graph name.");
+                //     } else if(filledname.length > 12) {
+                //         alert("Graph name must be no more than 12 characters.")
+                //     } else if(chosefile = ""){
+                //         alert("Please choose your file.");
+                //     } else {
+                //         handleFileSelect();
+                //     }
+                // });   
             }
             $('#database_name').val(""); //set input field to "" after upload data completed
-            $('#files').val("");
+            //$('#files').val("");
             
             $('#pop1').click(function(){
                 $('#container1').parent().append($('#container1'));
