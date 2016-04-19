@@ -28,10 +28,12 @@
     height: 150px;
 }
 #pop1{
-    z-index: 3;
+    z-index: 4;
+    color:red;
 }
 #pop2{
     z-index: 4;
+    color:blue;
 }
 .zoom-section1 {
     position: absolute;
@@ -54,4 +56,21 @@
 
 #table {
     text-align: center;
+}
+.btn-graph1{
+    color: red;
+}
+.btn-graph2{
+    color: blue;
+}
+.divcontaintable{
+    height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body{
+    position: fixed;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: rgba(0,0,0,0.7);
 }
