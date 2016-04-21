@@ -82,8 +82,25 @@
     }
 
     function handleFileSelect(evt) {
-        createDatabase();
         var label = $('#database_name').val();
+        if(label.length == 0){
+            alert("Please fill your graph name");
+            $('#files').val('');
+            return;
+        }
+        if($.isNumeric(label.charAt(0))){
+            alert("Graph name must not start with number.");
+            $('#files').val('');
+            return;
+        }
+        if (label.length > 12){
+            alert("Graph name must not exceed 12 characters.");
+            $('#files').val('');
+            return;
+        }
+
+        createDatabase();
+        
         var files = evt.target.files; // FileList object
         var file = files[0];
 
@@ -116,6 +133,7 @@
         }
         reader.onerror = function(){ alert('Unable to read ' + file.fileName); };
         $('#database_name').val(""); //set input field to "" after upload data completed
+        $('#files').val('');
     }
 
     function isAPIAvailable() {
@@ -146,24 +164,8 @@
         $(document).ready(function() {
             if(isAPIAvailable()) {
                 $('#files').bind('change', handleFileSelect);
-                // $('#uploadbutton').click(function(){
-                //     // check condition
-                //     var filledname = $('#database_name').val();
-
-                //     var chosefile = $('#files').val();
-                //     if (filledname == ""){
-                //         alert("Please enter your graph name.");
-                //     } else if(filledname.length > 12) {
-                //         alert("Graph name must be no more than 12 characters.")
-                //     } else if(chosefile = ""){
-                //         alert("Please choose your file.");
-                //     } else {
-                //         handleFileSelect();
-                //     }
-                // });   
             }
             $('#database_name').val(""); //set input field to "" after upload data completed
-            //$('#files').val("");
             
             $('#pop1').click(function(){
                 $('#container1').parent().append($('#container1'));
@@ -174,8 +176,7 @@
                 $('#container2').parent().append($('#container2'));
                 $('#pop2').addClass("active");
                 $('#pop1').removeClass("active");
-                /*$('#container2').css('z-index',2);
-                $('#container1').css('z-index',1);*/
+
             });
         });
     }();

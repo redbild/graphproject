@@ -17,8 +17,8 @@ function initSigma() {
         });
     s1.settings({
         defaultEdgeType: "curvedArrow",
-        minEdgeSize : 0.003,
-        maxEdgeSize : 0.1,
+        minEdgeSize : 0.05,
+        maxEdgeSize : 0.3,
         minNodeSize : 0.5,
         maxNodeSize : 5,
         mouseWheelEnabled: false,
@@ -32,8 +32,8 @@ function initSigma() {
         });
     s2.settings({
         defaultEdgeType: "curvedArrow",
-        minEdgeSize : 0.003,
-        maxEdgeSize : 0.1,
+        minEdgeSize : 0.05,
+        maxEdgeSize : 0.3,
         minNodeSize : 0.5,
         maxNodeSize : 5,
         mouseWheelEnabled: false,

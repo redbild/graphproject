@@ -24,8 +24,7 @@
 			    <div class="select-button-wrapper text-left col-sm-12" style="top:10px;">
 			    	<h4>Upload your data and see what happens!</h4>
 			    	Graph Name : <input class="form-control" placeholder="Enter Your Graph's Name. (No more than 12 characters)" type="text" id="database_name">
-			    	<input type="file" id="files" name="files[]" multiple style="margin-top:5px;"/>
-			    	<!-- <button type="button" class="btn btn-primary" id="uploadbutton" style="margin-top:5px;">Upload</button> -->
+			    	<input type="file" id="files" name="files[]" multiple style="margin-top:5px;">Choose your file and it's ready to go!</input>
 			    	<hr style="margin-top:10px;">
 			    </div>
 
@@ -48,23 +47,23 @@
 		    	<div class="col-sm-12">
 			    	<div id="container1">
 			    		<div class="zoom-section1">
-	                        <button class="btn btn-success" id="zoomin1">
+	                        <button class="btn btn-danger" id="zoomin1">
 	                            <i class="fa fa-search-plus"></i>
 	                        </button>
 	                        <button class="btn btn-danger" id="zoomout1">
 	                            <i class="fa fa-search-minus"></i>
 	                        </button>
-	                        <button class="btn btn-primary" id="nozoom1">
+	                        <button class="btn btn-danger" id="nozoom1">
 	                            <i class="fa fa-refresh"></i>
 	                        </button>
 	                    </div>
 			    	</div>
 			    	<div id="container2">
 			    		<div class="zoom-section2">
-	                        <button class="btn btn-success" id="zoomin2">
+	                        <button class="btn btn-primary" id="zoomin2">
 	                            <i class="fa fa-search-plus"></i>
 	                        </button>
-	                        <button class="btn btn-danger" id="zoomout2">
+	                        <button class="btn btn-primary" id="zoomout2">
 	                            <i class="fa fa-search-minus"></i>
 	                        </button>
 	                        <button class="btn btn-primary" id="nozoom2">
@@ -92,7 +91,7 @@
 			            <p style="font-weight:bold;">Import Data</p>
 			            <p>1. Fill database name (No more than 12 characters).</p>
 			            <p>2. Choose CSV file to import. Import file should have two coloumns of data including source and target of each relation.</p>
-			            <p>3. Click import button, then wait a sec for importing data into Neo4J(Graph Database). </p>
+			            <p>3. After choosing your file, our system will automatically import your data into Neo4J 	(Graph Database). </p>
 			            <br>
 			            <p style="font-weight:bold;">Visualize Graphs</p>
 			            <p>1. All graphs are listed in graph list table. Choose one or two of them to visualize.<br>
@@ -117,7 +116,7 @@
 			        </div>
 			        <div class="modal-body">
 			            <p style="font-weight:bold;">2110593 Web Programming (2/2015) Final Project</p>
-			            <p>name kim*****</p>
+			            <p>5530166321 Nattapon Werayawarangura</p>
 			            <p>5531024021 Tittasin Sukcharoen</p>
 			            <p style="font-weight:bold;">Powered by</p>
 			            <img src="pic/laravel.png" class="img-rounded pull-left" style="width:100px;height:100px;">
